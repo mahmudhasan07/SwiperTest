@@ -1,41 +1,50 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+// import './App.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+// import 'swiper/css/bundle';
+import 'swiper/css/mousewheel';
+// import 'swiper/css/scrollbar';
+
+
 
 // import required modules
-import { Mousewheel, Pagination } from 'swiper/modules';
+import { Mousewheel, Pagination,Scrollbar } from 'swiper/modules';
 
 function App() {
 
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <section className=' border-2'>
+      <Swiper
+        direction={'vertical'}
+        slidesPerView={1.5}
+        spaceBetween={50}
+        mousewheel={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Mousewheel, Pagination, Scrollbar]}
+        className=" border-2 h-[500px]"
+      >
+        <SwiperSlide className='my-1 p-1 border-2 border-black'>Slide 1</SwiperSlide>
+        <SwiperSlide className='my-1 p-1 border-2 border-black'>Slide 2</SwiperSlide>
+        <SwiperSlide className='my-1 p-1 border-2 border-black'>Slide 3</SwiperSlide>
+        <SwiperSlide className='my-1 p-1 border-2 border-black'>Slide 4</SwiperSlide>
+        <SwiperSlide className='my-1 p-1 border-2 border-black'>Slide 5</SwiperSlide>
+        <SwiperSlide className='my-1 p-1 border-2 border-black'>Slide 6</SwiperSlide>
+        <SwiperSlide className='my-1 p-1 border-2 border-black'>Slide 7</SwiperSlide>
+        <SwiperSlide className='my-1 p-1 border-2 border-black'>Slide 8</SwiperSlide>
+        <SwiperSlide className='my-1 p-1 border-2 border-black'>Slide 9</SwiperSlide>
+      </Swiper>
+      </section>
     </>
   )
 }
